@@ -28,8 +28,8 @@ class NexusLoginScreen extends StatelessWidget {
               // Logo and title
               Image.asset(
                 'LogoW.png', // Ensure this path matches your `pubspec.yaml`
-                width: 150, // Adjust width as needed
-                height: 150, // Adjust height as needed
+                width: 200, // Adjust width as needed
+                height: 200, // Adjust height as needed
               ),
               const SizedBox(height: 10),
               const Text(
@@ -44,7 +44,7 @@ class NexusLoginScreen extends StatelessWidget {
               Icon(
                 Icons.public,
                 size: 100,
-                color: Colors.green,
+                color: const Color.fromARGB(255, 76, 175, 80),
               ),
               const SizedBox(height: 40),
               // Email input
