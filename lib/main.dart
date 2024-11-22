@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 // Navigate to the second page
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Jos()),
+                  MaterialPageRoute(builder: (context) => const NexusApp()),
                 );
               },
               child: const Text('Go to Jos Page'),
