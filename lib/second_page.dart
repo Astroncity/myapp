@@ -5,7 +5,7 @@ class SecondPage extends StatelessWidget {
 
   //list of Habits
     static final List<Habit> habits = [
-        Habit('Exercise'),
+        Habit('n'),
         Habit('Read'),
         Habit('Meditate'),
         Habit('Drink Water'),
@@ -54,14 +54,10 @@ class HabitState extends State<Habit>{
     int daysCompleted;
     HabitState(this.name, this.daysCompleted);
     void incrementDays(){
-        setState(() {
-        daysCompleted++;
-        });
+        setState(() => daysCompleted++); 
     }
     void decrementDays(){
-        setState(() {
-        daysCompleted--;
-        });
+        setState(() => daysCompleted--);
     }
     @override
     Widget build(BuildContext context){
