@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/main.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -57,8 +58,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 // Add navigation logic here
               }),
               _buildActionButton('Home', () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MyApp()),
+                );
                 // Add redirection logic here
               }),
+
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
