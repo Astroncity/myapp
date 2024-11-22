@@ -62,6 +62,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_gruvbox_theme:
+    dependency: "direct main"
+    description:
+      name: flutter_gruvbox_theme
+      sha256: e5f616c284dde8999e16d0249df89baab1f94a3820ac14b256a8f8c14f4b249d
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0+2"
   flutter_lints:
     dependency: "direct dev"
     description:

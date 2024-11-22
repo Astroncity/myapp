@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'second_page.dart'; // Import the new page
 import 'jos.dart';
+import 'package:flutter_gruvbox_theme/flutter_gruvbox_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Erick Cuello',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: GruvboxTheme.light(),
+      darkTheme: GruvboxTheme.dark(),
+      themeMode: ThemeMode.dark,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
