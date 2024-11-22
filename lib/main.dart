@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'second_page.dart'; // Import the new page
 import 'jos.dart';
 import 'package:flutter_gruvbox_theme/flutter_gruvbox_theme.dart';
+import 'ulises.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,6 +79,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
               child: const Text('Go to Jos Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the second page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProfileScreen()),
+                );
+              },
+              child: const Text('Go to Ulises Page'),
             ),
           ],
         ),
