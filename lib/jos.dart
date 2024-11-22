@@ -27,7 +27,7 @@ class NexusLoginScreen extends StatelessWidget {
             children: [
               // Logo and title
               Image.asset(
-                'assets/LogoWhite.png', // Ensure this path matches your `pubspec.yaml`
+                'LogoWhite.png', // Ensure this path matches your `pubspec.yaml`
                 width: 150, // Adjust width as needed
                 height: 150, // Adjust height as needed
               ),

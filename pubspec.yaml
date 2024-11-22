@@ -23,8 +23,8 @@ environment:
 
 flutter:
   assets: 
-    - assets/LogoWhite.png
-    - assets/ShortLogo.png
+    - LogoWhite.png
+    - ShortLogo.png
     
   uses-material-design: true
 
