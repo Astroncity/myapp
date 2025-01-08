@@ -3,6 +3,7 @@ import 'second_page.dart'; // Import the new page
 import 'jos.dart';
 import 'package:flutter_gruvbox_theme/flutter_gruvbox_theme.dart';
 import 'ulises.dart';
+import 'Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,13 +73,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigate to the second page
+                // Navigate to the login page
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const NexusApp()),
                 );
               },
               child: const Text('Go to Jos Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigate to the second page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: const Text('Go Home Page'),
             ),
             ElevatedButton(
               onPressed: () {
