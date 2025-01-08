@@ -66,10 +66,7 @@ class HabitPageState extends State<SecondPage> {
       appBar: AppBar(
         title: const Text('Habit Tracker'),
         actions: [
-          ElevatedButton(
-            onPressed: _openAddHabitDialog,
-            child: const Icon(Icons.add),
-          ),
+          const Text ("Username"),
         ],
       ),
       body: _habits.isEmpty
