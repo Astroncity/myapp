@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'second_page.dart'; // Import the new page
+import 'ulises.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -165,6 +166,13 @@ class NexusHomeScreen extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const SecondPage()),
+            );
+          }
+          if (index == 2) {
+            // Navigate to the profife page when 'My Habits Page' is tapped
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfileScreen()),
             );
           }
         }
