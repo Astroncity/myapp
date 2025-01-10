@@ -145,22 +145,32 @@ class NexusHomeScreen extends StatelessWidget {
         backgroundColor: Colors.green,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.black,
-        items: const [
-          BottomNavigationBarItem(
+        items: [
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart),
+            icon: const Icon(Icons.bar_chart),
             label: 'My Habits Page',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Profile',
           ),
         ],
+        onTap: (index) {
+          if (index == 1) {
+            // Navigate to the second page when 'My Habits Page' is tapped
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SecondPage()),
+            );
+          }
+        }
       ),
     );
+    
   }
 }
 
