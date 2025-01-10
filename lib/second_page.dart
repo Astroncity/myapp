@@ -10,6 +10,15 @@ class SecondPage extends StatefulWidget {
 class HabitPageState extends State<SecondPage> {
   final TextEditingController _habitNameController = TextEditingController();
   final List<Habit> _habits = [];
+  final Map<String, int> _completionsByDay = {
+    "Monday": 0,
+    "Tuesday": 0,
+    "Wednesday": 0,
+    "Thursday": 0,
+    "Friday": 0,
+    "Saturday": 0,
+    "Sunday": 0,
+  };
 
   void _addHabit(String name) {
     setState(() {
@@ -27,7 +36,31 @@ class HabitPageState extends State<SecondPage> {
   void _incrementDays(int index) {
     setState(() {
       _habits[index].days++;
+      String today = _getToday();
+      _completionsByDay[today] = (_completionsByDay[today] ?? 0) + 1;
     });
+  }
+
+  String _getToday() {
+    final now = DateTime.now();
+    switch (now.weekday) {
+      case 1:
+        return "Monday";
+      case 2:
+        return "Tuesday";
+      case 3:
+        return "Wednesday";
+      case 4:
+        return "Thursday";
+      case 5:
+        return "Friday";
+      case 6:
+        return "Saturday";
+      case 7:
+        return "Sunday";
+      default:
+        return "Unknown";
+    }
   }
 
   @override
@@ -62,6 +95,24 @@ class HabitPageState extends State<SecondPage> {
                       );
                     },
                   ),
+          ),
+          const Divider(),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                const Text(
+                  "Completions This Week",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
+                const SizedBox(height: 8),
+                for (var entry in _completionsByDay.entries)
+                  Text(
+                    "${entry.key}: ${entry.value}",
+                    style: const TextStyle(fontSize: 14),
+                  ),
+              ],
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -117,7 +168,6 @@ class HabitCard extends StatefulWidget {
   final VoidCallback onRemove;
   final VoidCallback onIncrement;
   final Function(String) onUpdateDescription;
-  
 
   const HabitCard({
     super.key,
@@ -134,7 +184,7 @@ class HabitCard extends StatefulWidget {
 class _HabitCardState extends State<HabitCard> {
   bool _isHovered = false;
   final TextEditingController _descriptionController = TextEditingController();
-  
+
   @override
   void initState() {
     super.initState();
@@ -179,14 +229,12 @@ class _HabitCardState extends State<HabitCard> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Display the description
                   Text(
                     widget.habit.description.isNotEmpty
                         ? widget.habit.description
                         : "No description provided.",
                     style: const TextStyle(color: Color(0xFFbdae93)),
                   ),
-                  // Show the input field on hover
                   if (_isHovered)
                     Padding(
                       padding: const EdgeInsets.only(top: 8.0),
